@@ -1,4 +1,4 @@
-# k8s-kubeadm
+# RedHat-Based installation
 
 # Set SELinux in permissive mode
 
