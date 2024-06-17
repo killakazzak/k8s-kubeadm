@@ -26,6 +26,7 @@ sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 firewall-cmd --permanent --add-port=2379/tcp
 firewall-cmd --permanent --add-port=2380/tcp
 firewall-cmd --permanent --add-port=6443/tcp
+firewall-cmd --permanent --add-port=10250/tcp
 firewall-cmd --reload
 ```
 
