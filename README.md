@@ -15,8 +15,10 @@ EOF
 ```
 
 ### Disable swap
+
 ```sh
-swapoff -a && sed -i ‘/ swap / s/^/#/’ /etc/fstab
+sudo swapoff -a
+sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 ```
 
 ### Firewalld configuration
