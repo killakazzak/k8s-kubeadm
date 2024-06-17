@@ -48,6 +48,10 @@ sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 systemctl enable --now containerd
 ```
 
+### Installation iproute-tc
+```sh
+sudo yum install -y iproute-tc
+```
 
 ## Add the Kubernetes yum repository
 
