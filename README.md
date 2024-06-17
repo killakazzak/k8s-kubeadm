@@ -81,3 +81,7 @@ sudo systemctl enable --now kubelet
 ```sh
 sudo kubeadm init --apiserver-advertise-address=10.159.86.79 --pod-network-cidr=10.244.0.0/16 --control-plane-endpoint=10.159.86.79 --v=5
 ```
+### Installation CNI
+```sh
+kubectl apply -f https://docs.projectcalico.org/v3.14/manifests/calico.yaml
+```
