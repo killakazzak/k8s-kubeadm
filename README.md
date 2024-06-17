@@ -83,5 +83,6 @@ sudo kubeadm init --apiserver-advertise-address=10.159.86.79 --pod-network-cidr=
 ```
 ### Installation CNI
 ```sh
-kubectl apply -f https://docs.projectcalico.org/v3.14/manifests/calico.yaml
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/custom-resources.yaml
+kubectl get pods -n calico-system
 ```
