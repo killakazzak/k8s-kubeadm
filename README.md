@@ -13,6 +13,16 @@ cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
 net.ipv4.ip_forward = 1
 EOF
 ```
+
+### Firewalld configuration
+```sh
+firewall-cmd --permanent --add-port=2379/tcp
+firewall-cmd --permanent --add-port=2380/tcp
+firewall-cmd --permanent --add-port=6443/tcp
+firewall-cmd --reload
+```
+
+
 ### Apply sysctl params without reboot
 ```sh
 sudo sysctl --system
