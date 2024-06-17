@@ -14,6 +14,11 @@ net.ipv4.ip_forward = 1
 EOF
 ```
 
+### Disable swap
+```sh
+swapoff -a && sed -i ‘/ swap / s/^/#/’ /etc/fstab
+```
+
 ### Firewalld configuration
 ```sh
 firewall-cmd --permanent --add-port=2379/tcp
