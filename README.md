@@ -79,5 +79,5 @@ sudo systemctl enable --now kubelet
 ### Cluster init
 
 ```sh
-sudo kubeadm init --apiserver-advertise-address=10.159.86.79 --pod-network-cidr=10.244.0.0/16 --control-plane-endpoint=10.159.86.79
+sudo kubeadm init --apiserver-advertise-address=10.159.86.79 --pod-network-cidr=10.244.0.0/16 --control-plane-endpoint=10.159.86.79 --v=5
 ```
