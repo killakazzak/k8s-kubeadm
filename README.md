@@ -13,6 +13,11 @@ cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
 net.ipv4.ip_forward = 1
 EOF
 ```
+### Verify that net.ipv4.ip_forward is set to 1 with:
+
+```sh
+sysctl net.ipv4.ip_forward
+```
 
 ### Disable swap
 
@@ -34,11 +39,6 @@ firewall-cmd --reload
 ### Apply sysctl params without reboot
 ```sh
 sudo sysctl --system
-```
-
-### Verify that net.ipv4.ip_forward is set to 1 with:
-```sh
-sysctl net.ipv4.ip_forward
 ```
 ## Install Docker Engine
 
