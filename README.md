@@ -110,4 +110,5 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```sh
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.1/deploy/static/provider/baremetal/deploy.yaml
 ```
+https://kubernetes.github.io/ingress-nginx/deploy/#bare-metal-clusters
 
