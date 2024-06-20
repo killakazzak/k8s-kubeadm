@@ -315,10 +315,18 @@ spec:
         - name: tmp-volume
           emptyDir: {}
 EOF
-```
-```sh
 kubectl apply -f recommended.yaml
 ```
 
+## Create users and roles for the dashboard
 
-
+```sh
+cat > admin-user-service-account.yaml <<-EOF
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kubernetes-dashboard
+EOF
+kubectl apply -f admin-user-service-account.yaml
+```
