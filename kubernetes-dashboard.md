@@ -2,10 +2,7 @@
 https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
 
 ```sh
-vim recommended.yaml
-```
-
-```yaml
+cat > recommended.yaml <<-EOF
 # Copyright 2017 The Kubernetes Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -312,6 +309,7 @@ spec:
       volumes:
         - name: tmp-volume
           emptyDir: {}
+EOF
 ```
 ```sh
 kubectl apply -f recommended.yaml
