@@ -84,6 +84,8 @@ sudo systemctl enable --now kubelet
 
 ```sh
 rm -rf  /etc/containerd/config.toml
+containerd config default > /etc/containerd/config.toml
+sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
 systemctl restart containerd.service
 ```
 
