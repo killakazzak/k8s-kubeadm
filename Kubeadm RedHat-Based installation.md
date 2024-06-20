@@ -777,5 +777,4 @@ webhooks:
 EOF
 kubectl apply -f ingress-controller-deploy.yaml
 ```
-https://kubernetes.github.io/ingress-nginx/deploy/#bare-metal-clusters
 
