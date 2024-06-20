@@ -330,3 +330,20 @@ metadata:
 EOF
 kubectl apply -f admin-user-service-account.yaml
 ```
+```sh
+cat > admin-user-cluster-role-binding.yaml <<-EOF
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: admin-user
+  namespace: kubernetes-dashboard
+EOF
+kubectl apply -f admin-user-cluster-role-binding.yaml
+```
