@@ -50,6 +50,7 @@ spec:
   ports:
     - port: 443
       targetPort: 8443
+  type: NodePort
   selector:
     k8s-app: kubernetes-dashboard
 
@@ -257,7 +258,6 @@ spec:
   ports:
     - port: 8000
       targetPort: 8000
-  type: NodePort
   selector:
     k8s-app: dashboard-metrics-scraper
 
