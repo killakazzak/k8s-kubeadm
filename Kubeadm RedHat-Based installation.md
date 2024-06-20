@@ -46,18 +46,13 @@ firewall-cmd --reload
 ```sh
 sudo sysctl --system
 ```
-## Install Docker Engine
+## Install Docker Engine and iproute-tc
 
 ```sh
 sudo yum install -y yum-utils
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-sudo yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin iproute-tc
 systemctl enable --now containerd
-```
-
-### Installation iproute-tc
-```sh
-sudo yum install -y iproute-tc
 ```
 
 ## Add the Kubernetes yum repository
