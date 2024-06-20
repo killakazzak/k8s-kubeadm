@@ -37,6 +37,11 @@ firewall-cmd --permanent --add-port=6443/tcp
 firewall-cmd --permanent --add-port=8443/tcp
 firewall-cmd --permanent --add-port=10250/tcp
 firewall-cmd --permanent --add-port=10254/tcp
+firewall-cmd --permanent --add-port=4789/udp
+firewall-cmd --permanent --add-port=5473/tcp
+firewall-cmd --permanent --add-port=51820/udp
+firewall-cmd --permanent --add-port=51821/udp
+firewall-cmd --permanent --add-port=4789/udp
 firewall-cmd --reload
 ```
 
