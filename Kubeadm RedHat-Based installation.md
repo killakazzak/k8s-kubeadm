@@ -9,7 +9,7 @@ sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 ## Enable IPv4 packet forwarding
 
 ```sh
-cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+cat <<EOF | sudo tee /etc/sysctl.conf
 net.ipv4.ip_forward = 1
 EOF
 ```
