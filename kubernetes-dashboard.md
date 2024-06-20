@@ -1,5 +1,7 @@
-Installation Dashboard
-
+#Deploying the Dashboard UI
+```sh
+vim recommended.yaml
+```
 
 ```yaml
 # Copyright 2017 The Kubernetes Authors.
