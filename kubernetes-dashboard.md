@@ -347,3 +347,9 @@ subjects:
 EOF
 kubectl apply -f admin-user-cluster-role-binding.yaml
 ```
+## Create Token for user admin-user
+
+```sh
+kubectl -n kubernetes-dashboard create token admin-user
+```
+
