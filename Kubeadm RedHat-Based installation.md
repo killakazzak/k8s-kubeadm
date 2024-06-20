@@ -6,20 +6,15 @@
 sudo setenforce 0
 sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 ```
-## Enable IPv4 packet forwarding
+## Enable and Verify IPv4 packet forwarding
 
 ```sh
 cat <<EOF | sudo tee /etc/sysctl.conf
 net.ipv4.ip_forward = 1
 EOF
 echo 1 > /proc/sys/net/ipv4/ip_forward
-```
-### Verify that net.ipv4.ip_forward is set to 1 with:
-
-```sh
 sysctl net.ipv4.ip_forward
 ```
-
 ### Disable swap
 
 ```sh
