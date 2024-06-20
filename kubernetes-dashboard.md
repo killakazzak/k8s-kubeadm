@@ -1,4 +1,6 @@
 # Deploying the Dashboard UI
+https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+
 ```sh
 vim recommended.yaml
 ```
@@ -311,5 +313,9 @@ spec:
         - name: tmp-volume
           emptyDir: {}
 ```
+```sh
+kubectl apply -f recommended.yaml
+```
+
 
 
