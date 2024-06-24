@@ -35,9 +35,11 @@ firewall-cmd --permanent --add-port=10250/tcp
 firewall-cmd --permanent --add-port=10254/tcp
 firewall-cmd --permanent --add-port=4789/udp
 firewall-cmd --permanent --add-port=5473/tcp
+firewall-cmd --permanent --add-port=6379/tcp
 firewall-cmd --permanent --add-port=51820/udp
 firewall-cmd --permanent --add-port=51821/udp
 firewall-cmd --permanent --add-port=4789/udp
+firewall-cmd --permanent --add-port=30000-32767/tcp
 firewall-cmd --permanent --add-rich-rule='rule protocol value="4" accept'
 firewall-cmd --reload
 ```
