@@ -83,5 +83,7 @@ PublicKey = <content-of-client2-publickey>
 AllowedIPs = 10.0.0.3/32
 ```
 
-sudo systemctl restart wg-quick@wg0
-
+```sh
+systemctl restart wg-quick@wg0
+systemctl status wg-quick@wg0
+```
