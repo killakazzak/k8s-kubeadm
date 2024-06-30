@@ -34,7 +34,7 @@ PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING 
 ListenPort = 51820
 
 [Peer]
-PublicKey = <publickey>
+PublicKey = <client-publickey>
 AllowedIPs = 10.0.0.2/32
 EOF
 ```
