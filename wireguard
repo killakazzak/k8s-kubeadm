@@ -77,7 +77,7 @@ Adding more clients
 
 sudo nano /etc/wireguard/wg0.conf
 
-[//]: Add the following entry at the end of the file to include your second client’s public key and set the IP address.
+[comment]: # (Add the following entry at the end of the file to include your second client’s public key and set the IP address.)
 ```
 [Peer]
 PublicKey = <content-of-client2-publickey>
