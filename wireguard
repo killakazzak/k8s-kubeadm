@@ -40,3 +40,49 @@ sudo cat /etc/wireguard/privatekey
 Starting WireGuard and enabling it at boot
 
 wg-quick up wg0
+
+wg show
+
+systemctl enable wg-quick@wg0
+
+sudo modprobe wireguard
+
+sudo reboot
+
+Client configuration
+
+
+sudo nano /etc/wireguard/wg0.conf
+
+```
+[Interface]
+Address = 10.0.0.2/32
+PrivateKey = <contents-of-client-privatekey>
+DNS = 1.1.1.1
+
+[Peer]
+PublicKey = <contents-of-server-publickey>
+Endpoint = <server-public-ip>:51820
+AllowedIPs = 0.0.0.0/0, ::/0
+```
+
+sudo wg-quick up wg0
+
+sudo systemctl start wg-quick@wg0
+
+sudo wg-quick down wg0
+sudo systemctl stop wg-quick@wg0
+
+Adding more clients
+
+sudo nano /etc/wireguard/wg0.conf
+
+### Add the following entry at the end of the file to include your second client’s public key and set the IP address.
+```
+[Peer]
+PublicKey = <content-of-client2-publickey>
+AllowedIPs = 10.0.0.3/32
+```
+
+sudo systemctl restart wg-quick@wg0
+
