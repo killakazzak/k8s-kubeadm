@@ -8,50 +8,45 @@ EOF
 sudo sysctl -p
 ```
 
+```sh
 sudo apt install ufw
 sudo ufw allow ssh
 sudo ufw allow 51820/udp
 sudo ufw enable
 sudo ufw status
+```
 
-Generating private and public keys
+### Generating private and public keys
+
+```sh
+wg genkey | tee /etc/wireguard/privatekey | wg pubkey | tee /etc/wireguard/publickey
+```
 
 ```sh
 cd /etc/wireguard
 umask 077
-privatekey=$(wg genkey)
-publickey=$(echo $privatekey | wg pubkey)
-
 cat <<EOF > /etc/wireguard/wg0.conf
 [Interface]
-PrivateKey = $privatekey
+PrivateKey = <privatekey> # Приватный ключ из файла privatekey.
 Address = 10.0.0.1/24
 PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 ListenPort = 51820
 
 [Peer]
-PublicKey = $publickey
+PublicKey = <publickey>
 AllowedIPs = 10.0.0.2/32
 EOF
 ```
 
-ip route list default
-
-sudo cat /etc/wireguard/publickey
-sudo cat /etc/wireguard/privatekey
-
-Starting WireGuard and enabling it at boot
-
+### Starting WireGuard and enabling it at boot
+```sh
 wg-quick up wg0
-
-wg show
-
 systemctl enable wg-quick@wg0
-
 sudo modprobe wireguard
-
-sudo reboot
+systemctl enable wg-quick@wg0.service
+wg show
+```
 
 Client configuration
 
