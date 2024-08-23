@@ -35,6 +35,28 @@ location /octopus-pilot {
   proxy_pass  http://m1.web.a1.application.dev2-balance.mos.local;
 }
 ```
+```bash
+vi /usr/local/openresty/nginx/conf/ssl_dev2-balance.mos.ru.conf
+```
+
+```nginx
+server {
+    listen      443 ssl;
+    server_name dev2-balance.mos.ru;
+    #proxy_intercept_errors on;
+
+    #ssl                       on;
+    ssl_protocols             TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers               RC4:HIGH:!aNULL:!MD5:!kEDH;
+    ssl_prefer_server_ciphers on;
+    ssl_certificate           /etc/pki/star.mos.ru/star.mos.ru.crt;
+    ssl_certificate_key       /etc/pki/star.mos.ru/star.mos.ru.key;
+
+    include dev2_1c_location.conf;
+}
+```
+
+
 ```
 vi /usr/local/openresty/nginx/conf/nginx.conf
 ```
