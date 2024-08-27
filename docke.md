@@ -13,4 +13,11 @@ sudo bash -c 'echo -e "[Service]\nEnvironment=\"HTTP_PROXY=http://10.159.86.102:
 sudo systemctl daemon-reload
 systemctl show --property Environment docker
 systemctl restart docker
+docker info
 ```
+```
+docker login -u $USER
+Password: https://app.docker.com/settings/personal-access-tokens
+```
+
+
