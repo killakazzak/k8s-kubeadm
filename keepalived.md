@@ -1,4 +1,12 @@
+
+```bash
+yum install keepalived -y
+```
+
+
 ```sh
+
+cat 
 vrrp_script chk_haproxy {
     script "killall -0 haproxy"
     interval 2
@@ -23,4 +31,8 @@ vrrp_instance VI_depr_1 {
        10.206.123.243
     }
 }
+```
+```
+systemctl enable --now keepalived
+systemctl status keepalived
 ```
