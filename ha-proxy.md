@@ -33,9 +33,10 @@ backend kube-apiserver
     option tcp-check
     balance roundrobin
     default-server inter 10s downinter 5s rise 2 fall 2 slowstart 60s maxconn 250 maxqueue 256 weight 100
-    server $master_1  $master_1:6443 check
-    server $master_2  $master_2:6443 check
-    server $master_3  $master_3:6443 check
+    server ismail-ctr101p  10.207.173.121:6443 check
+    server ismail-ctr102p  10.207.173.122:6443 check
+    server ismail-ctr103p  10.207.173.123:6443 check
+
 EOF
 
 systemctl enable --now haproxy
