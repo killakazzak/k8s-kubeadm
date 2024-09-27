@@ -23,6 +23,11 @@ sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 ```
 
 ### Firewalld configuration
+
+```sh
+systemctl dislabe --now firewalld
+```
+
 ```sh
 firewall-cmd --permanent --add-port=80/tcp
 firewall-cmd --permanent --add-port=179/tcp
