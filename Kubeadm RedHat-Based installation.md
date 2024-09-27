@@ -96,7 +96,7 @@ systemctl restart containerd.service
 ## Cluster init
 
 ```sh
-sudo kubeadm init --apiserver-advertise-address=10.159.86.79 --pod-network-cidr=10.244.0.0/16 --control-plane-endpoint=10.159.86.79 --v=5
+sudo kubeadm init --apiserver-advertise-address=10.207.173.121 --pod-network-cidr=10.244.0.0/16 --control-plane-endpoint=10.207.173.247 --v=5
 ```
 ## Setup admin access
 
