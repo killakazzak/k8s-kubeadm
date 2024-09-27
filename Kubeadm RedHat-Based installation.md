@@ -25,7 +25,7 @@ sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 ### Firewalld configuration
 
 ```sh
-systemctl disabe --now firewalld
+systemctl disable --now firewalld
 ```
 
 ```sh
