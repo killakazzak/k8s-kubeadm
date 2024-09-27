@@ -39,5 +39,5 @@ backend kube-apiserver
 
 EOF
 
-systemctl enable --now haproxy
+systemctl restart haproxy
 ```
