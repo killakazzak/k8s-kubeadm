@@ -1,0 +1,13 @@
+# handlers/main.yml
+
+- name: Restart web server
+  service:
+    name: httpd
+    state: restarted
+  when: ansible_os_family == "RedHat"
+
+- name: Restart nginx
+  service:
+    name: nginx
+    state: restarted
+  when: ansible_os_family == "Debian"
