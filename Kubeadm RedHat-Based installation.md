@@ -80,7 +80,8 @@ EOF
 ## Install kubelet, kubeadm and kubectl
 
 ```sh
-sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+#sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+sudo yum install -y kubelet-1.30.5 kubeadm-1.30.5 kubectl-1.30.5 --disableexcludes=kubernetes
 sudo systemctl enable --now kubelet
 ```
 
