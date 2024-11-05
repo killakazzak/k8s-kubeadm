@@ -93,6 +93,15 @@ containerd config default > /etc/containerd/config.toml
 sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
 systemctl restart containerd.service
 ```
+```
+mkdir /etc/systemd/system/containerd.service.d/
+vim /etc/systemd/system/containerd.service.d/http-proxy.conf
+[Service]
+Environment="HTTP_PROXY=http://10.159.86.102:63128"
+Environment="HTTPS_PROXY=http://10.159.86.102:63128"
+Environment="NO_PROXY=10.0.0.0/8"
+```
+
 
 ## Cluster init
 
