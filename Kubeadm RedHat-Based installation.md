@@ -100,6 +100,8 @@ vim /etc/systemd/system/containerd.service.d/http-proxy.conf
 Environment="HTTP_PROXY=http://10.159.86.102:63128"
 Environment="HTTPS_PROXY=http://10.159.86.102:63128"
 Environment="NO_PROXY=10.0.0.0/8"
+systemctl daemon-reload
+systemctl restart containerd.service
 ```
 
 
